@@ -1,0 +1,53 @@
+global:
+  identity:
+    auth:
+      enabled: false
+
+identity:
+  enabled: false
+
+identityKeycloak:
+  enabled: false
+
+optimize:
+  enabled: false
+
+zeebe:
+  clusterSize: 1
+  partitionCount: 1
+  replicationFactor: 1
+  pvcSize: 10Gi
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 500m
+    limits:
+      memory: 1024Mi
+      cpu: 800m
+
+zeebeGateway:
+  replicas: 1
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 250m
+    limits:
+      memory: 512Mi
+      cpu: 500m
+
+connectors:
+  enabled: false
+
+elasticsearch:
+  enabled: true
+  master:
+    replicaCount: 1
+    persistence:
+      size: 15Gi
+    resources:
+      requests:
+        memory: 512Mi
+        cpu: 500m
+      limits:
+        memory: 1024Mi
+        cpu: 800m
